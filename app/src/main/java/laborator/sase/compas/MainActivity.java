@@ -85,8 +85,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 azimuthDegree = 0.0f;
             }
 
-            if(azimuthDegree >= 179.0f){
-                azimuthDegree += (azimuthDegree - 179.0f);
+            if(azimuthDegree <= -180.0f){
+                azimuthDegree += (Math.abs(azimuthDegree) - 180.0f);
             }
 
             RotateAnimation rotateAnimation = new RotateAnimation(currentDegree, -azimuthDegree,
